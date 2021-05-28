@@ -29,3 +29,35 @@ const doubleNumber = (numbers) => {
 };
 
 doubleNumber([2, 5, 6, 7]); //=
+
+/////////////////*************************************** */
+
+function isPalindrome(str) {
+  let reverseStr = str.split("").reduce((acc, crr) => crr + acc); //=
+  return str === reverseStr;
+}
+
+isPalindrome("racecar"); //=
+
+/////////////////*************************************** */
+
+function reverseInt(int) {
+  let reverseInt = int.toString().split("").reverse().join(""); //=
+  return parseInt(reverseInt) * Math.sign(int);
+}
+
+reverseInt(-154); //=
+
+/////////////////*************************************** */
+
+function capitalizeLetters(str) {
+  return str
+    .split(" ")
+    .reduce((acc, currentValue) => {
+      return (acc =
+        acc + currentValue[0].toUpperCase() + currentValue.slice(1) + " ");
+    }, "")
+    .trim(); //=
+}
+
+capitalizeLetters("i love javascript"); //=
