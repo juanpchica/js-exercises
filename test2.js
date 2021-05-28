@@ -51,13 +51,54 @@ reverseInt(-154); //=
 /////////////////*************************************** */
 
 function capitalizeLetters(str) {
-  return str
-    .split(" ")
-    .reduce((acc, currentValue) => {
-      return (acc =
-        acc + currentValue[0].toUpperCase() + currentValue.slice(1) + " ");
-    }, "")
-    .trim(); //=
+  //   return str
+  //     .split(" ")
+  //     .reduce((acc, currentValue) => {
+  //       return (acc =
+  //         acc + currentValue[0].toUpperCase() + currentValue.substr(1) + " ");
+  //     }, "")
+  //     .trim(); //=
+
+  //   return str
+  //     .toLowerCase()
+  //     .split(" ")
+  //     .map((word) => {
+  //       return word[0].toUpperCase() + word.substr(1); //=
+  //     })
+  //     .join(" "); //=
+
+  str.replace("i", "f"); //=
 }
 
 capitalizeLetters("i love javascript"); //=
+
+/////////////////*************************************** */
+
+function maxCharacter(str) {
+  const charMap = {};
+  let maxNum = 0;
+  let maxChar = 0;
+
+  str.split("").map((char) => {
+    if (charMap[char]) {
+      charMap[char]++;
+    } else {
+      charMap[char] = 1;
+    }
+  });
+
+  //Iterate over object
+  for (let char in charMap) {
+    charMap[char]; //=
+    if (charMap[char] > maxNum) {
+      maxNum = charMap[char]; //=
+      maxChar = char; //=
+    }
+  }
+
+  return maxChar;
+}
+
+maxCharacter("javascript"); //=
+
+/////////////////*************************************** */
