@@ -209,4 +209,81 @@ const lessThen40 = () => {
 
 lessThen40(); //=
 
-//**********************************************//
+//*********************** Queue ***********************//
+
+var Queue = function () {
+  collection = [];
+
+  this.print = function () {
+    console.log(collection);
+  };
+
+  this.queue = function (el) {
+    collection.push(el);
+  };
+
+  this.dequeue = function () {
+    return collection.shift();
+  };
+
+  this.front = function () {
+    return collection[0];
+  };
+
+  this.size = function () {
+    return collection.length;
+  };
+
+  this.isEmpty = function () {
+    return collection.length === 0;
+  };
+};
+
+var q = new Queue();
+q.queue("A");
+q.queue("B");
+q.queue("C");
+q.print();
+
+q.dequeue();
+q.print();
+
+q.isEmpty(); //=
+q.front(); //=
+
+//*********************** Priority Queue ***********************//
+function PriorityQueue() {
+  var collection = [];
+
+  this.print = function () {
+    console.log(collection);
+  };
+
+  this.queue = function (el) {
+    if (this.isEmpty()) {
+      collection.push(el);
+    } else {
+      var added = false;
+      for (let i = 0; i < collection.length; i++) {
+        if (el[1] < collection[i][1]) {
+          collection.splice(i, 0, el);
+          added = true;
+          break;
+        }
+      }
+      if (!added) {
+        collection.push(el);
+      }
+    }
+  };
+
+  this.isEmpty = function () {
+    return collection.length === 0;
+  };
+}
+
+var q = new PriorityQueue();
+q.queue(["Juan", 2]);
+q.queue(["Pablo", 3]);
+q.queue(["Nico", 1]);
+q.print();
