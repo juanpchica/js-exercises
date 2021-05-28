@@ -22,14 +22,65 @@ user.sleep("pepe");
 
 //********************** */
 
-const isPalindrom = (word) => {
-  let rWord;
+const isPalindrom = (word) => word.trim().split("").reverse().join("") === word;
 
-  for (let index = word.length; index == 0; index--) {
-    rWord += word[index]; //=
+isPalindrom("racecar "); //=
+
+function isPalindrome(word) {
+  var letters = [];
+  var rWord = "";
+
+  for (let i = 0; i < word.length; i++) {
+    letters.push(word[i]); //=
   }
 
-  return rWord;
+  for (let i = 0; i < word.length; i++) {
+    rWord += letters.pop(); //=
+  }
+
+  return rWord === word;
+}
+
+isPalindrome("racecar"); //=
+
+//**********************************************//
+
+var Stack = function () {
+  this.storage = {};
+  this.count = 0;
+
+  this.push = function (value) {
+    this.storage[this.count] = value;
+    this.count++;
+  };
+
+  this.pop = function () {
+    if (this.count === 0) {
+      return undefined;
+    }
+
+    this.count--;
+    var result = this.storage[this.count];
+
+    delete this.storage[this.count];
+    return result;
+  };
+
+  this.peek = function () {
+    return this.storage[this.count - 1];
+  };
+
+  this.size = function () {
+    return this.count;
+  };
 };
 
-isPalindrom("racecar"); //=
+var stacka = new Stack();
+
+stacka.push(5);
+stacka.push(4);
+stacka.push(6);
+stacka.size(); //=
+stacka.peek(); //=
+stacka.pop(); //=
+stacka.peek(); //=
