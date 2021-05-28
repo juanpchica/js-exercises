@@ -84,3 +84,127 @@ stacka.size(); //=
 stacka.peek(); //=
 stacka.pop(); //=
 stacka.peek(); //=
+
+//**********************************************//
+
+class Set {
+  collection = [];
+  constructor(arr = []) {
+    this.collection = arr;
+  }
+
+  has = function (el) {
+    return this.collection.indexOf(el) !== -1;
+  };
+
+  add = function (el) {
+    if (!this.has(el)) {
+      this.collection.push(el);
+      return true;
+    }
+    return false;
+  };
+
+  values = function () {
+    return this.collection;
+  };
+
+  remove = function (el) {
+    if (this.has(el)) {
+      const index = this.collection.indexOf(el);
+      this.collection.splice(index, 1);
+      return true;
+    }
+    return false;
+  };
+
+  size = function () {
+    return this.collection.length;
+  };
+
+  union = function (otherSet) {
+    var unionSet = new Set();
+    var firstSet = this.values();
+    var secondSet = otherSet.values();
+
+    firstSet.forEach((el) => {
+      unionSet.add(el);
+    });
+
+    secondSet.forEach((el) => {
+      unionSet.add(el);
+    });
+
+    return unionSet;
+  };
+
+  intersection = function (otherSet) {
+    var intersectionSet = new Set();
+
+    var secondSet = otherSet.values();
+    secondSet.forEach((el) => {
+      if (this.has(el)) {
+        intersectionSet.add(el);
+      }
+    });
+
+    return intersectionSet;
+  };
+
+  //Return the difference of two set as a new set
+  difference = function (otherSet) {
+    var differenceSet = new Set();
+    var firstSet = this.values();
+
+    firstSet.forEach((el) => {
+      if (!otherSet.has(el)) {
+        differenceSet.add(el);
+      }
+    });
+
+    return differenceSet;
+  };
+
+  //This method will test if the set is a subset of a different set
+  subset = function (otherSet) {
+    var firstSet = this.values();
+
+    return firstSet.every(function (value) {
+      return otherSet.has(value);
+    });
+  };
+}
+
+var setA = new Set(["D", "Z"]);
+var setB = new Set([1, 3]);
+setA.add("A");
+setA.add("B");
+setA.add("C");
+
+setA.has("D"); //=
+setA.remove("B"); //=
+
+setA.values(); //=
+
+setA.size();
+
+setA.union(setB); //=
+setB.add("A");
+
+setA.intersection(setB).collection; //=
+
+setB.values(); //=
+
+setA.difference(setB).collection; //=
+
+setB.subset(setA); //=
+
+//**********************************************//
+const lessThen40 = () => {
+  var numbers = [1, 5, 6, 7, 41];
+  return numbers.every(function (el) {
+    return el < 40;
+  });
+};
+
+lessThen40(); //=
