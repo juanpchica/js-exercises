@@ -119,3 +119,10 @@ function fizzBuzz() {
 }
 
 fizzBuzz(); //=
+
+const removeElement = (el) => {
+  const cities = ["Pereira", "Cali", "Bogota", "Medellin"];
+  return cities.filter((citie) => citie !== el); //=
+};
+
+removeElement("Pereira"); //=
