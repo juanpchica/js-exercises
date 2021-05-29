@@ -51,3 +51,21 @@ function sockMerchan(n, ar) {
 }
 
 sockMerchan(9, [1, 3, 4, 1, 1, 3, 4, 4, 5]); //=
+
+/******************************************************************** */
+function rotLeft(a, d) {
+  let rotateArr = [];
+  let newPosition;
+
+  for (const el in a) {
+    newPosition = el - d; //=
+    if (newPosition < 0) {
+      newPosition = a.length + newPosition; //=
+    }
+    rotateArr[newPosition] = a[el];
+  }
+
+  return rotateArr;
+}
+
+rotLeft([1, 5, 3, 4, 2], 1); //=
