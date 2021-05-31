@@ -71,3 +71,21 @@ function rotLeft(a, d) {
 rotLeft([1, 5, 3, 4, 2], 1); //=
 
 /******************************************************************** */
+
+function sumArr(arr) {
+  return arr.reduce((acc, currentValue) => (acc += currentValue));
+}
+
+sumArr([5, 6, 8, 1, 6]); //=
+
+/******************************************************************** */
+function getRandomNumber(arr) {
+  const randomPos = 0;
+  arr.length; //=
+  console.log(arr[Math.floor(Math.random() * arr.length)]);
+  setInterval(function () {
+    console.log(arr[Math.floor(Math.random() * arr.length)]); //=
+  }, 1000);
+}
+
+getRandomNumber(["juan", "pablo", "chica", "nico", "pipe"]); //=
