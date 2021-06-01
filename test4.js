@@ -83,9 +83,65 @@ function getRandomNumber(arr) {
   const randomPos = 0;
   arr.length; //=
   console.log(arr[Math.floor(Math.random() * arr.length)]);
-  setInterval(function () {
-    console.log(arr[Math.floor(Math.random() * arr.length)]); //=
-  }, 1000);
+  // setInterval(function () {
+  //   console.log(arr[Math.floor(Math.random() * arr.length)]); //=
+  // }, 1000);
 }
 
 getRandomNumber(["juan", "pablo", "chica", "nico", "pipe"]); //=
+
+/******************************************************************** */
+
+const person = {
+  name: "Juan",
+  getName: function () {
+    console.log(this.name);
+  },
+};
+
+person.getName(); //=
+
+/******************************************************************** */
+
+function compare(a, b) {
+  // Use toUpperCase() to ignore character casing
+  const ageA = a.age;
+  const ageB = b.age;
+
+  let comparison = 0;
+  if (ageA > ageB) {
+    comparison = 1;
+  } else if (ageA < ageB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
+const orderObject = (arr) => {
+  let newArr = [];
+  for (const person in arr) {
+    arr[person].age; //=
+    //=
+  }
+
+  arr.sort(compare); //=
+};
+
+orderObject([
+  {
+    name: "Juan",
+    age: 25,
+  },
+  {
+    name: "Pablo",
+    age: 5,
+  },
+  {
+    name: "Nico",
+    age: 15,
+  },
+  {
+    name: "Pepe",
+    age: 56,
+  },
+]);

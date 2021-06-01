@@ -126,3 +126,20 @@ const removeElement = (el) => {
 };
 
 removeElement("Pereira"); //=
+
+/////////////////*************************************** */
+
+const data = {
+  user: {
+    name: "juan",
+    age: 25,
+  },
+};
+
+data; //=
+
+var name1 = data.user.name; //=
+const {
+  user: { name },
+} = data;
+console.log(name); //=
