@@ -13,10 +13,14 @@
         const counter = {
             cnt: 0,
 
-            inc: function () {
+            function() {
                 this.cnt++;
                 console.log(this.cnt);
+            },
+            exc: ()=>{
+
             }
+
         };
 
         var button = document.getElementsByTagName('button')[0]; 
