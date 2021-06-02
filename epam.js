@@ -20,6 +20,8 @@ function cuandoVacunarse(edad, ocup, personasCasa) {
     personasCasa === 2
   ) {
     return "Se agendara para diciembre";
+  } else {
+    return "Datos digitados no son validos en nuestro sistema...";
   }
 }
 
