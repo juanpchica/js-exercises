@@ -23,7 +23,7 @@ formatRecords([
   {
     StudentId: 20,
     name: "chad west",
-    graduating: true,
+    graduating: true, 
   },
   {
     StudentId: 23,
