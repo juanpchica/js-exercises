@@ -38,3 +38,11 @@ async function getMovieList(year) {
 }
 
 getMovieList(2015); //=
+
+//////////////////////////////
+function reductionCost(num) {
+  return num.reduce((accum, currentValue) => {
+    return (accum += currentValue); //=
+  });
+}
+reductionCost([1, 2, 3]); //=
