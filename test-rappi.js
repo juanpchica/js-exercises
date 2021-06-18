@@ -3,10 +3,14 @@ const inventoryList = () => {
 
   const actions = {
     add: (name) => {
-      list.push({ name: name });
+      if (list.length <= 10 && name != "") {
+        list.push({ name: name });
+      }
     },
     remove: (name) => {
-      list = list.filter((item) => item.name != name); //=
+      if (name != "") {
+        list = list.filter((item) => item.name != name); //=
+      }
     },
     getList: () => {
       return list;
