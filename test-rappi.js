@@ -25,3 +25,16 @@ inventory.add("Peter");
 inventory.getList(); //=
 inventory.remove("Juan");
 inventory.getList(); //=
+
+//////////////////////////
+
+async function getMovieList(year) {
+  // write your code here
+  const response = await fetch(
+    `https://jsonmock.hackerrank.com/api/movies?Year=${year}`
+  );
+  const data = await response.json();
+  console.log(data); //=
+}
+
+getMovieList(2015); //=
