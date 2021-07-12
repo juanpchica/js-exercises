@@ -145,3 +145,15 @@ orderObject([
     age: 56,
   },
 ]);
+
+function average(table) {
+  // Your code goes here
+  if (table === "") return 0;
+  sum = table.reduce((acc, val) => {
+    return acc + val; //=
+  });
+
+  return sum / table.length;
+}
+
+average([5, 5, 5]); //=
