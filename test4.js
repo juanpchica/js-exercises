@@ -100,7 +100,7 @@ const person = {
 };
 
 person.getName(); //=
-
+person.getName();
 /******************************************************************** */
 
 function compare(a, b) {
