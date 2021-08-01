@@ -166,3 +166,11 @@ function normalLoop() {
 }
 
 normalLoop();
+
+const forEachLoop = function () {
+  companies.forEach((company) => {
+    company.name; //=
+  });
+};
+
+forEachLoop();
