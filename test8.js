@@ -19,8 +19,14 @@ function Book(title, year, author) {
   };
 }
 
+Book.prototype.getAge = function () {
+  const years = new Date().getFullYear() - this.year;
+  return `${this.title} is ${years} years old`;
+};
+
 const book1 = new Book("The Hobbit", 2015, "Juan Pablo Chica");
 book1.showInfo(); //=
 
 const book2 = new Book("The Lord Of the Rings", 2015, "Nico Chica");
 book2.showInfo(); //=
+book2.getAge(); //=
