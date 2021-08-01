@@ -227,3 +227,14 @@ function get80Companies() {
 }
 
 get80Companies(); //=
+
+//Getting new array with Map
+function newArrayMap() {
+  const testMap = companies.map((company) => {
+    return `Company: ${company.name} - ${company.start} - ${company.end}`; //=
+  });
+
+  testMap;
+}
+
+newArrayMap(); //=
