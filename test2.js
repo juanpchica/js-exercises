@@ -199,7 +199,22 @@ const getAges21 = (ages) => {
   });
 
   ages;
-  newAges; //=
+  newAgesMap; //=
+
+  // //Foreach
+  // const newAgesForEach = ages.forEach((age)=>{
+  //   if (age >= 21) return age;
+  // })
+
+  //  ages;
+  //  newAgesForEach;
 };
 
 getAges21([33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32]);
+
+///Filtering out retails
+const noRetails = () => {
+  return companies.filter((company) => company.category !== "Retail");
+};
+
+noRetails(); //=
