@@ -248,3 +248,12 @@ const companyStart = () => {
 };
 
 companyStart(); //=
+
+//Reduce to calculate total years for all companies
+const totalYears = function () {
+  return companies.reduce((total, company) => {
+    return total + (company.end - company.start);
+  }, 0);
+};
+
+totalYears(); //=
