@@ -174,3 +174,32 @@ const forEachLoop = function () {
 };
 
 forEachLoop();
+
+//Get ages above 21
+const getAges21 = (ages) => {
+  //For
+  ages = ages.sort();
+  for (let i = 0; i < ages.length; i++) {
+    if (ages[i] >= 21) {
+      ages[i]; //=
+    }
+  }
+
+  //Filter
+  const newAges = ages.filter((age) => {
+    if (age >= 21) return age; //=
+  });
+
+  ages;
+  newAges; //=
+
+  //Map
+  const newAgesMap = ages.map(function (age) {
+    if (age >= 21) return age;
+  });
+
+  ages;
+  newAges; //=
+};
+
+getAges21([33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32]);
