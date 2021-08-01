@@ -218,3 +218,12 @@ const noRetails = () => {
 };
 
 noRetails(); //=
+
+//Get 80s companies
+function get80Companies() {
+  return companies.filter(
+    (company) => company.start >= 1980 && company.start <= 1990
+  );
+}
+
+get80Companies(); //=
